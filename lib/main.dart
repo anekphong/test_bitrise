@@ -17,7 +17,8 @@ Future<void> main() async {
 /// We are using `withConverter` to ensure that interactions with the collection
 /// are type-safe.
 final moviesRef = FirebaseFirestore.instance
-    .collection('Movie')
+    .collection('firestore-example-app')
+    // .collection('Movie')
     .withConverter<Movie>(
       fromFirestore: (snapshots, _) => Movie.fromJson(snapshots.data()!),
       toFirestore: (movie, _) => movie.toJson(),
@@ -431,26 +432,26 @@ class Movie {
   }
 }
 
-// const defaultFirebaseOptions = const FirebaseOptions(
-//   apiKey: 'AIzaSyB7wZb2tO1-Fs6GbDADUSTs2Qs3w08Hovw',
-//   appId: '1:406099696497:web:87e25e51afe982cd3574d0',
-//   messagingSenderId: '406099696497',
-//   projectId: 'flutterfire-e2e-tests',
-//   authDomain: 'flutterfire-e2e-tests.firebaseapp.com',
-//   databaseURL:
-//       'https://flutterfire-e2e-tests-default-rtdb.europe-west1.firebasedatabase.app',
-//   storageBucket: 'flutterfire-e2e-tests.appspot.com',
-//   measurementId: 'G-JN95N1JV2E',
-// );
+const defaultFirebaseOptions = const FirebaseOptions(
+  apiKey: 'AIzaSyB7wZb2tO1-Fs6GbDADUSTs2Qs3w08Hovw',
+  appId: '1:406099696497:web:87e25e51afe982cd3574d0',
+  messagingSenderId: '406099696497',
+  projectId: 'flutterfire-e2e-tests',
+  authDomain: 'flutterfire-e2e-tests.firebaseapp.com',
+  databaseURL:
+      'https://flutterfire-e2e-tests-default-rtdb.europe-west1.firebasedatabase.app',
+  storageBucket: 'flutterfire-e2e-tests.appspot.com',
+  measurementId: 'G-JN95N1JV2E',
+);
 
 //Firebase web application
-const defaultFirebaseOptions = const FirebaseOptions(
-  apiKey: "AIzaSyAJ6jYSIOYb6fOlbuPv9TmLcR8MtaiiYAw",
-  authDomain: "fir-hosting3.firebaseapp.com",
-  databaseURL: "https://fir-hosting3-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "fir-hosting3",
-  storageBucket: "fir-hosting3.appspot.com",
-  messagingSenderId: "579086856905",
-  appId: "1:579086856905:web:2557d2735057048131d318",
-  measurementId: "G-6P0NTPJ624"
-);
+// const defaultFirebaseOptions = const FirebaseOptions(
+//   apiKey: "AIzaSyAJ6jYSIOYb6fOlbuPv9TmLcR8MtaiiYAw",
+//   authDomain: "fir-hosting3.firebaseapp.com",
+//   databaseURL: "https://fir-hosting3-default-rtdb.asia-southeast1.firebasedatabase.app",
+//   projectId: "fir-hosting3",
+//   storageBucket: "fir-hosting3.appspot.com",
+//   messagingSenderId: "579086856905",
+//   appId: "1:579086856905:web:2557d2735057048131d318",
+//   measurementId: "G-6P0NTPJ624"
+// );
